@@ -1,7 +1,7 @@
 mod advent;
 use advent::Advent;
-mod days;
-use days::*;
+mod solutions;
+use solutions::*;
 
 pub struct Days {
     solutions: Vec<Box<dyn Advent>>
@@ -10,7 +10,8 @@ pub struct Days {
 // initialse Days
 pub fn init_solutions() -> Days {
     let mut solutions = Vec::new();
-    solutions.push(Box::new(day_one::DayOne{}) as Box<dyn Advent>);
+    solutions.push(Box::new(day_one_first::DayOne{}) as Box<dyn Advent>);
+    solutions.push(Box::new(day_one_second::DayOneSecond{}) as Box<dyn Advent>);
     Days{
         solutions: solutions
     }
